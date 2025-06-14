@@ -45,37 +45,67 @@ Maak een gedifferentieerde oefening voor het onderwijs met de volgende specifica
 **Type oefening:** ${exerciseType}
 ${additionalInfo ? `**Extra informatie:** ${additionalInfo}` : ''}
 
+BELANGRIJK: Maak concrete, praktische opdrachten die leerlingen direct kunnen maken. Geen theoretische uitleg of casussen, maar echte oefenvragen met duidelijke instructies.
+
 Maak drie versies van dezelfde oefening:
 
 ## 🟢 MAKKELIJKE VERSIE
-[Maak een eenvoudige versie met:
-- Kleinere getallen/eenvoudigere concepten
-- Meer begeleiding en stappenplannen
-- Duidelijke voorbeelden
-- Minder complexe vraagstelling]
+
+**Opdracht voor leerlingen:**
+
+[Maak hier concrete oefenvragen die leerlingen direct kunnen beantwoorden. Bijvoorbeeld:
+- Bij rekenen: echte sommen met getallen
+- Bij taal: concrete zinnen om te verbeteren
+- Bij topografie: specifieke landen/steden om aan te wijzen
+- Bij geschiedenis: concrete vragen over gebeurtenissen
+- Gebruik eenvoudige getallen/woorden
+- Geef duidelijke instructies
+- Voeg voorbeelden toe waar nuttig]
+
+---
 
 ## 🟡 NORMALE VERSIE  
-[Maak een standaard versie met:
-- Gemiddelde moeilijkheidsgraad
-- Standaard getallen/concepten voor dit niveau
-- Beperkte begeleiding
-- Normale vraagstelling]
+
+**Opdracht voor leerlingen:**
+
+[Maak hier concrete oefenvragen op normaal niveau:
+- Gemiddelde moeilijkheidsgraad voor dit niveau
+- Standaard getallen/concepten
+- Duidelijke maar beknopte instructies
+- Vergelijkbare structuur als makkelijke versie maar uitdagender]
+
+---
 
 ## 🔴 MOEILIJKE VERSIE
-[Maak een uitdagende versie met:
-- Grotere getallen/complexere concepten
-- Minimale begeleiding
+
+**Opdracht voor leerlingen:**
+
+[Maak hier concrete oefenvragen op uitdagend niveau:
+- Complexere getallen/situaties
+- Minder begeleiding in de instructies
+- Extra stappen of denkwerk vereist
 - Uitbreidingsvragen
-- Meer analytisch denken vereist]
+- Zelfde type opdracht maar veel uitdagender]
+
+---
 
 ## 📋 ANTWOORDMODEL
-[Geef voor alle drie de versies:
-- Uitgewerkte antwoorden
-- Stappenplannen waar relevant
-- Beoordelingscriteria
-- Tips voor feedback]
 
-Zorg ervoor dat alle versies hetzelfde leeroel hebben maar op verschillende niveaus worden aangeboden. Gebruik duidelijke Nederlandse taal die past bij ${gradeLevel}.
+**Voor de docent - Uitwerkingen en antwoorden:**
+
+### Makkelijke versie:
+[Geef hier alle antwoorden en uitwerkingen]
+
+### Normale versie:
+[Geef hier alle antwoorden en uitwerkingen]
+
+### Moeilijke versie:
+[Geef hier alle antwoorden en uitwerkingen]
+
+### Beoordelingscriteria:
+[Geef tips voor beoordeling en feedback]
+
+Zorg ervoor dat alle versies hetzelfde leeroel hebben maar op verschillende niveaus worden aangeboden. De opdrachten moeten direct bruikbaar zijn voor leerlingen - geen uitleg of theorie, maar concrete vragen om te beantwoorden.
 `
 
       const response = await fetch('/api/chat', {
@@ -206,7 +236,7 @@ Zorg ervoor dat alle versies hetzelfde leeroel hebben maar op verschillende nive
                   type="text"
                   value={exerciseType}
                   onChange={(e) => setExerciseType(e.target.value)}
-                  placeholder="Bijv. Rekensommen, Begrijpend lezen, Woordproblemen, Grammatica..."
+                  placeholder="Bijv. 10 rekensommen, 5 begrijpend lezen vragen, woordproblemen, grammatica oefeningen..."
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
@@ -219,7 +249,7 @@ Zorg ervoor dat alle versies hetzelfde leeroel hebben maar op verschillende nive
                 <textarea
                   value={additionalInfo}
                   onChange={(e) => setAdditionalInfo(e.target.value)}
-                  placeholder="Specifieke wensen, leerdoelen, context, aantal vragen..."
+                  placeholder="Specifieke wensen, leerdoelen, context, aantal vragen, thema..."
                   rows={3}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -356,7 +386,7 @@ Zorg ervoor dat alle versies hetzelfde leeroel hebben maar op verschillende nive
                 <span className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                   <span className="text-white text-lg">📋</span>
                 </span>
-                Antwoordmodel & Beoordelingscriteria
+                Antwoordmodel & Uitwerkingen
               </h3>
               <ResponseActions 
                 content={result.answerKey}
